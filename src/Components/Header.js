@@ -3,7 +3,6 @@ import "./Header.css"
 import punkLogo from "../Assets/header/cryptopunk-logo.png"
 import searchLogo from "../Assets/header/search.png"
 import modeLogo from "../Assets/header/theme-switch.png"
-import { color } from '@mui/system';
 
 function Header() {
     return (
