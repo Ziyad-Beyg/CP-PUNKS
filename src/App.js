@@ -10,10 +10,13 @@ function App() {
   const [PunkListData, setPunkListData] = useState([])
   
   useEffect( async () => {
-    
-    let fetchedData = await axios.get('https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc')
-    fetchedData = fetchedData.data.assets
-    let allData = fetchedData.slice(1)
+    let request = {method: 'GET'}
+    let fetchedData = await fetch('https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc', request)
+    fetchedData = await fetchedData.json()
+    console.log(fetchedData)
+    // let fetchedData = await axios.get('https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc')
+    // fetchedData = fetchedData.data.assets
+    let allData = fetchedData.assets.slice(1)
     console.log(allData)
     setPunkListData(allData)
   }, [])
