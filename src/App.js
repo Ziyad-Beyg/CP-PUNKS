@@ -22,6 +22,11 @@ function App() {
     // let allData = await fetchedData.assets;
     // console.log(fetchedData)
     setPunkListData(fetchedData)
+    
+    
+    const headers = {'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}
   }, [])
 
   return (
