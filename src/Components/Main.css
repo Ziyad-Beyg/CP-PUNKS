@@ -1,0 +1,101 @@
+.main{
+    display: flex;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.punkImageContainer{
+    flex: 0.25;
+    width: 300px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.punkImageContainer  img{
+    width: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+.activePunkDetails{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    flex: 0.75;
+}
+
+.punkNameAndId{
+    display: flex;
+    align-items : center;
+}
+
+.activePunkTitle{
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.activePunkId{
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-left: 10px;
+    color: #a1a5b0;
+}
+
+.ownerDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.userImageContainer{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.userImageContainer img{
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userSocialInfo{
+    display: flex;
+}
+
+.userSocialInfoContainer{
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.userSocialInfoContainer img{
+    width: 50px;
+}
+
+.userWalletInfo{
+    font-size: 20px;
+}
+
+.userName{
+    font-size: 18px;
+    color: rgb(65, 146, 179);
+}
+
+.userDetails{
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}

@@ -2,9 +2,9 @@ import React from 'react'
 import './CollectionCard.css'
 import weth from '../Assets/weth.png'
 
-function CollectionCard({image, name, id, traits}) {
+function CollectionCard({image, name, id, traits, setSelectedPunk}) {
     return (
-        <div className='collectionCard'>
+        <div className='collectionCard' onClick={() => {setSelectedPunk(id)}}>
             <img src={image} />
             <div className='details'>
                 <div className='name'>
