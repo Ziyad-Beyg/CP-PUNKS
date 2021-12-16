@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import PunkList from './Components/PunkList';
 import Main from './Components/Main';
-
+import axios from 'axios';
 
 function App() {
 
@@ -11,22 +11,22 @@ function App() {
   const [SelectedPunk, setSelectedPunk] = useState(0)
   
   useEffect( async () => {
-    let request = {method: 'GET'}
-    let fetchedData = await fetch('https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc', request)
-    fetchedData = await fetchedData.json()
-    fetchedData = await fetchedData.assets
-    fetchedData = await fetchedData.slice(1,7)
+    // let request = {method: 'GET'}
+    // let fetchedData = await fetch('https://cors-anywhere.herokyapp.com/https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc', request)
+    // fetchedData = await fetchedData.json()
+    // fetchedData = await fetchedData.assets
+    // fetchedData = await fetchedData.slice(1,7)
     // console.log(fetchedData)
-    // let fetchedData = await axios.get('https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc')
-    // fetchedData = fetchedData.data.assets
-    // let allData = await fetchedData.assets;
-    // console.log(fetchedData)
-    setPunkListData(fetchedData)
+    let fetchedData = await axios.get(`https://testnets-api.opensea.io/assets?asset_contract_address=0x45475d9D43D9c1de5198DF7dd88e0fc992801E4B&order_direction=asc`)
+    fetchedData = fetchedData.data.assets
+    let allData = await fetchedData.slice(1,7);
+    console.log(fetchedData)
+    setPunkListData(allData)
     
     
     const headers = {'Content-Type':'application/json',
                     'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}
+                    'Access-Control-Allow-Methods':'GET,POST,PATCH,OPTIONS'}
   }, [])
 
   return (
