@@ -6,41 +6,35 @@ import twitter from '../Assets/owner/twitter.png'
 
 
 function Main({SelectedPunk, PunkList }) {
-// console.log(SelectedPunk)
-// console.log(PunkList)
-// console.log(PunkList[SelectedPunk])
+
 
     const [ActivePunk, setActivePunk] = useState(PunkList[SelectedPunk])
-    const [FirstTimer, setFirstTimer] = useState(false)
 
     useEffect(() => {
-        if(FirstTimer){
-            setActivePunk(PunkList[SelectedPunk - 1])
-        }
-        else{
-            setFirstTimer(true)
-        }
+      
+            setActivePunk(PunkList[SelectedPunk])
+
     }, [PunkList, SelectedPunk])
 
   return (
     <div className="main">
       <div className="punkImageContainer">
-        <img className="ActivePunkImage" src={ActivePunk?.image_original_url} />
+        <img className="ActivePunkImage" src={ActivePunk?.punkImage} />
       </div>
       <div className="activePunkDetails">
         <div className="punkNameAndId">
           <div className="activePunkTitle">{ActivePunk?.name}</div>
-          <div className="activePunkId">.#{ActivePunk?.token_id}</div>
+          <div className="activePunkId">.#{ActivePunk?.id}</div>
         </div>
         <div className="ownerDetails">
           <div className='userImageContainer'>
-            <img className='userImage' src={ActivePunk?.owner?.profile_img_url}/>
+            <img className='userImage' src={ActivePunk?.punkOwnerImage}/>
             <div className='userDetails'>
             <div className='userWalletInfo'>
-            {ActivePunk?.owner?.address}
+            {ActivePunk?.ownerWallerAddress}
             </div>
             <div className='userName'>
-                @{ActivePunk?.owner?.user?.username}
+                @{ActivePunk?.punkOwnerName}
             </div>
           </div>
           </div>

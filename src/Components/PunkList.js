@@ -9,7 +9,7 @@ function PunkList({PunkList, setSelectedPunk}) {
             {
                 PunkList.map( Punk => (
 
-                    <CollectionCard key={Punk.token_id} setSelectedPunk={setSelectedPunk} image={Punk.image_original_url} name={Punk.name} id={Punk.token_id} traits={Punk.traits} />
+                    <CollectionCard key={Punk.id} setSelectedPunk={setSelectedPunk} image={Punk.punkImage} name={Punk.name} id={Punk.id} price={Punk.punkPrice} />
 
      ) )
             }

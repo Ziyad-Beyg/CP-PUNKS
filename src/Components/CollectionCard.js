@@ -2,7 +2,7 @@ import React from 'react'
 import './CollectionCard.css'
 import weth from '../Assets/weth.png'
 
-function CollectionCard({image, name, id, traits, setSelectedPunk}) {
+function CollectionCard({image, name, id, price, setSelectedPunk}) {
     return (
         <div className='collectionCard' onClick={() => {setSelectedPunk(id)}}>
             <img src={image} />
@@ -16,7 +16,7 @@ function CollectionCard({image, name, id, traits, setSelectedPunk}) {
                 <div className='priceContainer'>
                     <img className='wethImg' src={weth} />
                     <div className='price'> 
-                        {traits[0].value}
+                        {price}
                     </div>
                 </div>
             </div>
