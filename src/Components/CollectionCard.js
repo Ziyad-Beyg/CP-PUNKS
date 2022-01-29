@@ -14,7 +14,7 @@ function CollectionCard({image, name, id, price, setSelectedPunk}) {
                     </div>
                 </div>
                 <div className='priceContainer'>
-                    <img className='wethImg' src={weth} />
+                    <img className='wethImg' src={weth}/>
                     <div className='price'> 
                         {price}
                     </div>
