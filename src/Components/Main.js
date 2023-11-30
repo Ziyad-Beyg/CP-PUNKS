@@ -1,20 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import './Main.css'
-import more from '../Assets/owner/more.png'
-import insta from '../Assets/owner/instagram.png'
-import twitter from '../Assets/owner/twitter.png'
+import React, { useState, useEffect } from "react";
+import "./Main.css";
+import more from "../Assets/owner/more.png";
+import insta from "../Assets/owner/instagram.png";
+import twitter from "../Assets/owner/twitter.png";
 
+function Main({ SelectedPunk, PunkList }) {
+  const [ActivePunk, setActivePunk] = useState(PunkList[SelectedPunk]);
 
-function Main({SelectedPunk, PunkList }) {
-
-
-    const [ActivePunk, setActivePunk] = useState(PunkList[SelectedPunk])
-
-    useEffect(() => {
-      
-            setActivePunk(PunkList[SelectedPunk])
-
-    }, [PunkList, SelectedPunk])
+  useEffect(() => {
+    setActivePunk(PunkList[SelectedPunk]);
+  }, [PunkList, SelectedPunk]);
 
   return (
     <div className="main">
@@ -27,33 +22,31 @@ function Main({SelectedPunk, PunkList }) {
           <div className="activePunkId">.#{ActivePunk?.id}</div>
         </div>
         <div className="ownerDetails">
-          <div className='userImageContainer'>
-            <img className='userImage' src={ActivePunk?.punkOwnerImage}/>
-            <div className='userDetails'>
-            <div className='userWalletInfo'>
-            {ActivePunk?.ownerWallerAddress}
-            </div>
-            <div className='userName'>
-                @{ActivePunk?.punkOwnerName}
+          <div className="userImageContainer">
+            <img className="userImage" src={ActivePunk?.punkOwnerImage} />
+            <div className="userDetails">
+              <div className="userWalletInfo">
+                {ActivePunk?.ownerWallerAddress}
+              </div>
+              <div className="userName">@{ActivePunk?.punkOwnerName}</div>
             </div>
           </div>
-          </div>
-          
-          <div className='userSocialInfo'>
-            <div className='userSocialInfoContainer'>
+
+          <div className="userSocialInfo">
+            <div className="userSocialInfoContainer">
               <img src={insta} />
             </div>
-            <div className='userSocialInfoContainer'>
+            <div className="userSocialInfoContainer">
               <img src={twitter} />
             </div>
-            <div className='userSocialInfoContainer'>
+            <div className="userSocialInfoContainer">
               <img src={more} />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Main
+export default Main;
